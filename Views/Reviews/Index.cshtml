@@ -1,0 +1,27 @@
+@model IEnumerable<Store.Models.Review>
+
+<h1>Reviews</h1>
+<a asp-action="Create" class="btn btn-primary">Create New Review</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Content</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var review in Model)
+        {
+            <tr>
+                <td>@review.Content</td>
+                <td>@review.Date</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@review.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@review.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@review.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

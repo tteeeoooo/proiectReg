@@ -1,0 +1,9 @@
+@model Store.Models.Category
+
+<ul>
+    @foreach (var item in ViewBag.Categories)
+    {
+        <li>@item.Id - @item.CategoryName</li>
+        <a class="btn btn-info" href="/Categories/Edit/@item.Id">Editare categorie</a>
+    }
+</ul>
